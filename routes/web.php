@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/{any}', function () {
+    return view('welcome');
+})->where('any', '.*');
+
+
+// We don't need the code below since we only redir user to welcome / we're implementing SPA approach
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
